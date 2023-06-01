@@ -1,0 +1,41 @@
+# Vraag de naam van de server op waarvan je de processen wilt checken en wijs deze toe aan de variabele: $server
+
+ 
+
+$server = Read-Host -Prompt "Voer de naam van de server in"
+
+ 
+
+ 
+
+# Neem de 'whitelist' in een variabele op met de naam: $array_white_list
+
+ 
+
+$array_white_list = Get-Content -Path $white_list
+
+ 
+
+ 
+
+# Maak het signaleringenbestand leeg en vul met naam van de server en datum/tijd.
+
+    # Server: <servernaam>
+
+    # Datum/Tijd: <datum en tijd>
+
+ 
+
+Set-Content -Path $signaleringen -Value "Server: $server`nDatum/Tijd: $datum_tijd"
+
+ 
+
+  
+
+ 
+
+# Voeg de procesnaam toe aan het signaleringenbestand
+
+ 
+
+Add-Content -Path $signaleringen -Value $proces_naam
