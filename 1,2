@@ -1,0 +1,19 @@
+
+# Ask for user input for server name and minutes
+$server = Read-Host -Prompt "Enter the server name"
+$minutes = Read-Host -Prompt "Enter the number of minutes"
+
+# Use the user input in the script
+Write-Host "The server name is: $server"
+Write-Host "The number of minutes is: $minutes"
+
+
+Add a prompt to clear a list by adding a new variable and then using an if statement to check the user input.
+
+$answer = Read-Host -Prompt "Clear the list (y/n)?";
+While (($answer -ne "y") -And ($answer -ne "n")) {
+$answer = Read-Host -Prompt "Invalid input, please enter y or n";
+}
+If ($answer -Eq 'y') {
+Set-Content -path $ListFile -value $null;
+}
